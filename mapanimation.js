@@ -10,8 +10,8 @@
     [-122.48525681951249, 37.859217348350654],
   ];
   
-  // TODO: add your own access token
-  mapboxgl.accessToken = 'pk.eyJ1IjoiamlsbGNyb29rMjgiLCJhIjoiY2xpdXd0ZWU3MDNwMDNna2F4bjJsam84NCJ9.zKI1C7YtRUbJ2IgWOez9Yw';
+// Add your own Access Token Here:
+  mapboxgl.accessToken = '';
   
   // TODO: create the map object using mapboxgl.map() function
   let map = new mapboxgl.Map({
