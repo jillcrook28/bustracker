@@ -13,7 +13,7 @@
 // Add your own Access Token Here:
   mapboxgl.accessToken = '';
   
-  // TODO: create the map object using mapboxgl.map() function
+  // Creates the map object using mapboxgl.map() function
   let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
@@ -21,12 +21,14 @@
     zoom: 14,
   });
   
-  // TODO: add a marker to the map
+  // Adds a marker to the map
 let marker = new mapboxgl.Marker().setLngLat([-122.44989725629257, 37.77545675691729]).addTo(map);
 
-// counter here represents the index of the current bus stop
+// Start the index of the current bus stop
 let counter = 0;
 
+
+// Initiate the move function
 function move() {
   // Updating the marker coordinates
   if (counter >= busStops.length) return;
@@ -35,11 +37,12 @@ function move() {
   map.flyTo({
     center: busStops[counter],
     zoom: 14,
-    speed: 0.3, // Adjust the speed of the animation 
-    curve: 1.6, // Adjust the curve of the animation 
+    speed: 0.3, 
+    curve: 1.6, 
     easing: (t) => t, 
   });
 
+   // Callback function to update marker location along with bus stop
   setTimeout(() => {
     if (counter >= busStops.length) return;
     marker.setLngLat(busStops[counter]);
